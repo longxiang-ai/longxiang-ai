@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="在跑 3d gaussian splatting 的过程中，发现了许多不能直接匹配的问题Ubuntu22.04在编译 SIBR viewers 的过程中，一直报错&#x2F;lib&#x2F;libdial.so undefined symbol 问题经过反复排查，找到的解决方案： 12345678910111213141516171819find_package(CURL REQUIRED)se">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cmake踩坑经历">
+<meta property="og:url" content="https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/index.html">
+<meta property="og:site_name" content="longxiang-ai">
+<meta property="og:description" content="在跑 3d gaussian splatting 的过程中，发现了许多不能直接匹配的问题Ubuntu22.04在编译 SIBR viewers 的过程中，一直报错&#x2F;lib&#x2F;libdial.so undefined symbol 问题经过反复排查，找到的解决方案： 12345678910111213141516171819find_package(CURL REQUIRED)se">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-09-14T05:13:20.000Z">
+<meta property="article:modified_time" content="2023-09-14T05:20:59.822Z">
+<meta property="article:author" content="longxiang">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/longxiang-ai/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/longxiang-ai/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/longxiang-ai/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>cmake踩坑经历</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/longxiang-ai/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/longxiang-ai/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/longxiang-ai/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/longxiang-ai/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/longxiang-ai/lib/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">longxiang-ai</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/longxiang-ai/home/">Home</a></li>
+         
+          <li><a href="/longxiang-ai/about/">About</a></li>
+         
+          <li><a href="/longxiang-ai/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/longxiang-ai">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+        
+        
+        <li><a class="icon" href="/longxiang-ai/2023/09/13/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E7%9B%B8%E5%85%B3%E8%AE%BA%E6%96%87/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&text=cmake踩坑经历"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&title=cmake踩坑经历"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&is_video=false&description=cmake踩坑经历"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=cmake踩坑经历&body=Check out this article: https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&title=cmake踩坑经历"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&title=cmake踩坑经历"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&title=cmake踩坑经历"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&title=cmake踩坑经历"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&name=cmake踩坑经历&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        cmake踩坑经历
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">longxiang-ai</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2023-09-14T05:13:20.000Z" itemprop="datePublished">2023-09-14</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>在跑 3d gaussian splatting 的过程中，发现了许多不能直接匹配的问题<br>Ubuntu22.04<br>在编译 SIBR viewers 的过程中，一直报错&#x2F;lib&#x2F;libdial.so undefined symbol 问题<br>经过反复排查，找到的解决方案：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(CURL REQUIRED)</span><br><span class="line"><span class="keyword">set</span>(GLIBX_LIBRARY <span class="string">&quot;/usr/lib/x86_64-linux-gnu/libstdc++.so.6&quot;</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="variable">$&#123;Boost_LIBRARIES&#125;</span></span><br><span class="line">    <span class="variable">$&#123;ASSIMP_LIBRARIES&#125;</span></span><br><span class="line">    <span class="variable">$&#123;GLEW_LIBRARIES&#125;</span></span><br><span class="line">    <span class="variable">$&#123;OPENGL_LIBRARIES&#125;</span></span><br><span class="line">    <span class="variable">$&#123;OpenCV_LIBRARIES&#125;</span></span><br><span class="line">    <span class="variable">$&#123;CURL_LIBRARYS&#125;</span> <span class="comment"># 添加库</span></span><br><span class="line">    <span class="variable">$&#123;GLIBX_LIBRARY&#125;</span> <span class="comment"># 添加GLIBX3.24.0</span></span><br><span class="line">    OpenMP::OpenMP_CXX</span><br><span class="line">    sibr_gaussian</span><br><span class="line">    sibr_view</span><br><span class="line">    sibr_assets</span><br><span class="line">    sibr_renderer</span><br><span class="line">    sibr_basic</span><br><span class="line">)</span><br><span class="line"><span class="keyword">include_directories</span>(<span class="variable">$&#123;GLIBX_LIBRARY&#125;</span>) <span class="comment"># 引用添加</span></span><br></pre></td></tr></table></figure>
+
+<p>上述的错误，终究还是对 cmake 不理解、使用的少导致的，以后的工作中免不了要和 cmake 打交道，所以还是尽量使用 cmake 的一些指令。<br>网上的解决方案给了我很大的帮助<br>ldd 查看.so 文件的库依赖<br>nm -D 查看动态链接的 symbol<br>grep 用来过滤显示的信息<br>locate 寻找动态链接库的位置</p>
+
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/longxiang-ai/home/">Home</a></li>
+         
+          <li><a href="/longxiang-ai/about/">About</a></li>
+         
+          <li><a href="/longxiang-ai/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/longxiang-ai">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&text=cmake踩坑经历"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&title=cmake踩坑经历"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&is_video=false&description=cmake踩坑经历"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=cmake踩坑经历&body=Check out this article: https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&title=cmake踩坑经历"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&title=cmake踩坑经历"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&title=cmake踩坑经历"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&title=cmake踩坑经历"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/&name=cmake踩坑经历&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2023 longxiang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/longxiang-ai/home/">Home</a></li>
+         
+          <li><a href="/longxiang-ai/about/">About</a></li>
+         
+          <li><a href="/longxiang-ai/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/longxiang-ai">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      
+<script src="/longxiang-ai/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/longxiang-ai/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>

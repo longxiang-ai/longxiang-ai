@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="oh-my-zshsudo apt install zshsudo apt install openssh-serversudo apt install curlsudo apt install gitsudo apt install vim wget https:&#x2F;&#x2F;gitee.com&#x2F;mirrors&#x2F;oh-my-zsh&#x2F;raw&#x2F;master&#x2F;tools&#x2F;install.shvim instal">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重装系统">
+<meta property="og:url" content="https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="longxiang-ai">
+<meta property="og:description" content="oh-my-zshsudo apt install zshsudo apt install openssh-serversudo apt install curlsudo apt install gitsudo apt install vim wget https:&#x2F;&#x2F;gitee.com&#x2F;mirrors&#x2F;oh-my-zsh&#x2F;raw&#x2F;master&#x2F;tools&#x2F;install.shvim instal">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-09-22T12:19:23.000Z">
+<meta property="article:modified_time" content="2023-09-22T13:23:11.372Z">
+<meta property="article:author" content="longxiang">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/longxiang-ai/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/longxiang-ai/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/longxiang-ai/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>重装系统</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/longxiang-ai/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/longxiang-ai/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/longxiang-ai/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/longxiang-ai/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/longxiang-ai/lib/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">longxiang-ai</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/longxiang-ai/home/">Home</a></li>
+         
+          <li><a href="/longxiang-ai/about/">About</a></li>
+         
+          <li><a href="/longxiang-ai/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/longxiang-ai">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/longxiang-ai/2023/09/14/cmake%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&text=重装系统"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&title=重装系统"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&is_video=false&description=重装系统"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=重装系统&body=Check out this article: https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&title=重装系统"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&title=重装系统"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&title=重装系统"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&title=重装系统"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&name=重装系统&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#oh-my-zsh"><span class="toc-number">1.</span> <span class="toc-text">oh-my-zsh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#X11"><span class="toc-number">2.</span> <span class="toc-text">X11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mount"><span class="toc-number">3.</span> <span class="toc-text">mount</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#conda"><span class="toc-number">4.</span> <span class="toc-text">conda</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">4.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E9%95%9C%E5%83%8F"><span class="toc-number">4.2.</span> <span class="toc-text">设置镜像</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        重装系统
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">longxiang-ai</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2023-09-22T12:19:23.000Z" itemprop="datePublished">2023-09-22</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a>oh-my-zsh</h2><p>sudo apt install zsh<br>sudo apt install openssh-server<br>sudo apt install curl<br>sudo apt install git<br>sudo apt install vim</p>
+<p>wget <a target="_blank" rel="noopener" href="https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh">https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh</a><br>vim install.sh<br>REPO&#x3D;${REPO:-mirrors&#x2F;oh-my-zsh}<br>REMOTE&#x3D;${REMOTE:-<a target="_blank" rel="noopener" href="https://gitee.com/$%7BREPO%7D.git%7D">https://gitee.com/${REPO}.git}</a><br>chmod +x install.sh<br>.&#x2F;install.sh</p>
+<p>git clone <a target="_blank" rel="noopener" href="https://gitee.com/hailin_cool/zsh-autosuggestions.git">https://gitee.com/hailin_cool/zsh-autosuggestions.git</a> $ZSH_CUSTOM&#x2F;plugins&#x2F;zsh-autosuggestions<br>git clone <a target="_blank" rel="noopener" href="https://gitee.com/Annihilater/zsh-syntax-highlighting.git">https://gitee.com/Annihilater/zsh-syntax-highlighting.git</a> ${ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom}&#x2F;plugins&#x2F;zsh-syntax-highlighting</p>
+<p>ZSH_THEME&#x3D;”agnoster”<br>plugins&#x3D;(<br>git<br>zsh-autosuggestions<br>zsh-syntax-highlighting<br>)</p>
+<h2 id="X11"><a href="#X11" class="headerlink" title="X11"></a>X11</h2><p>sudo apt install libx11-dev</p>
+<h2 id="mount"><a href="#mount" class="headerlink" title="mount"></a>mount</h2><p>sudo apt install nfs-kernel-server</p>
+<p>sudo vim &#x2F;etc&#x2F;exports<br>文末添加：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/sdc *(rw,<span class="keyword">sync</span>,no_subtree_check)</span><br><span class="line">/sdc *(rw,<span class="keyword">sync</span>,no_subtree_check)</span><br></pre></td></tr></table></figure>
+
+<p>sudo systemctl restart nfs-kernel-server # 重启服务<br>sudo ufw allow nfs # 开防火墙</p>
+<p>sudo apt-get install nfs-common -y<br>sudo mount xx.xx.xx.xx&#x2F;sdc &#x2F;sdc</p>
+<h2 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>curl –output anaconda.sh https:&#x2F;&#x2F;..</p>
+<p>sh anaconda.sh<br>一路 enter， yes yes</p>
+<h3 id="设置镜像"><a href="#设置镜像" class="headerlink" title="设置镜像"></a>设置镜像</h3><p>vim ~&#x2F;.condarc</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: true</span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.zju.edu.<span class="keyword">cn</span>/anaconda/pkgs/main</span><br><span class="line">  - https://mirrors.zju.edu.<span class="keyword">cn</span>/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.zju.edu.<span class="keyword">cn</span>/anaconda/pkgs/msys2</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://mirrors.zju.edu.<span class="keyword">cn</span>/anaconda/cloud</span><br><span class="line">  msys2: https://mirrors.zju.edu.<span class="keyword">cn</span>/anaconda/cloud</span><br><span class="line">  bioconda: https://mirrors.zju.edu.<span class="keyword">cn</span>/anaconda/cloud</span><br><span class="line">  menpo: https://mirrors.zju.edu.<span class="keyword">cn</span>/anaconda/cloud</span><br><span class="line">  pytorch: https://mirrors.zju.edu.<span class="keyword">cn</span>/anaconda/cloud</span><br><span class="line">  pytorch-lts: https://mirrors.zju.edu.<span class="keyword">cn</span>/anaconda/cloud</span><br><span class="line">  simpleitk: https://mirrors.zju.edu.<span class="keyword">cn</span>/anaconda/cloud</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip config set global.index-url https://mirrors.zju.edu.cn/pypi/web/simple</span><br></pre></td></tr></table></figure>
+
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/longxiang-ai/home/">Home</a></li>
+         
+          <li><a href="/longxiang-ai/about/">About</a></li>
+         
+          <li><a href="/longxiang-ai/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/longxiang-ai">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#oh-my-zsh"><span class="toc-number">1.</span> <span class="toc-text">oh-my-zsh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#X11"><span class="toc-number">2.</span> <span class="toc-text">X11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mount"><span class="toc-number">3.</span> <span class="toc-text">mount</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#conda"><span class="toc-number">4.</span> <span class="toc-text">conda</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">4.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E9%95%9C%E5%83%8F"><span class="toc-number">4.2.</span> <span class="toc-text">设置镜像</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&text=重装系统"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&title=重装系统"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&is_video=false&description=重装系统"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=重装系统&body=Check out this article: https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&title=重装系统"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&title=重装系统"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&title=重装系统"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&title=重装系统"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://longxiang-ai.github.io/longxiang-ai/2023/09/22/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/&name=重装系统&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2023 longxiang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/longxiang-ai/home/">Home</a></li>
+         
+          <li><a href="/longxiang-ai/about/">About</a></li>
+         
+          <li><a href="/longxiang-ai/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/longxiang-ai">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      
+<script src="/longxiang-ai/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/longxiang-ai/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>
