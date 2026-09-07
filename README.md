@@ -20,7 +20,7 @@ My research centers on **generative visual intelligence**, with a particular int
 
 ## 📰 News
 
-- **2026** — **TransNormal-2**: a new **preprint** on transparent-object geometry estimation.
+- **Sept 2026** — **[TransNormal-2](https://longxiang-ai.github.io/TransNormal-2/)** project page and visual comparisons are online.
 - **May 2026** — TransNormal was accepted to **ICML 2026**.
 - **Jan 2026** — BideDPO was accepted to **ICLR 2026**.
 - **May 2025** — DreamRenderer was accepted to **ICCV 2025**.
@@ -28,10 +28,13 @@ My research centers on **generative visual intelligence**, with a particular int
 
 ## 📚 Selected Publications
 
-### TransNormal-2: Dense Visual Semantics for Flow-based Transparent Object Geometry Estimation
+### [TransNormal-2: Geometry-Grounded Rectified Flow with Edge-Aware Decoding for Precise Normal Estimation](https://longxiang-ai.github.io/TransNormal-2/)
 
-**Mingwei Li**, Hehe Fan, Yi Yang<br>
-**Preprint, 2026**
+**Mingwei Li**, Yi Yang, Hehe Fan<br>
+**Preprint, 2026**<br>
+![arXiv forthcoming](https://img.shields.io/badge/arXiv-forthcoming-b31b1b.svg) [![GitHub](https://img.shields.io/github/stars/longxiang-ai/TransNormal-2?style=social)](https://github.com/longxiang-ai/TransNormal-2)
+
+Single-step surface normal estimation for general scenes and transparent objects with geometry-grounded rectified flow and edge-aware decoding.
 
 ### [TransNormal: Dense Visual Semantics for Diffusion-based Transparent Object Normal Estimation](https://longxiang-ai.github.io/TransNormal/)
 
