@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/Focus-Image%2FVideo_Generation_%26_3D_Vision-2E8B57?style=flat-square" alt="Research Focus">
 </p>
 
-I am a third-year Ph.D. student in Artificial Intelligence at **Zhejiang University**, advised by [**Prof. Yi Yang**](https://scholar.google.com/citations?user=RMSuNFwAAAAJ). I am also a research intern at **ByteDance**, working on video generation and editing.
+I am a third-year Ph.D. student at the **[College of Artificial Intelligence](https://ai.zju.edu.cn/), Zhejiang University**, advised by [**Prof. Yi Yang**](https://scholar.google.com/citations?user=RMSuNFwAAAAJ). I am also a research intern at **ByteDance**, working on video generation and editing.
 
 My research centers on **generative visual intelligence**, with a particular interest in connecting visual generation with geometry. My work spans controllable image and video generation, 3D vision, transparent-object geometry estimation, Gaussian Splatting, and digital human reconstruction and generation.
 
@@ -20,12 +20,18 @@ My research centers on **generative visual intelligence**, with a particular int
 
 ## 📰 News
 
+- **2026** — **TransNormal-2**: a new **preprint** on transparent-object geometry estimation.
 - **May 2026** — TransNormal was accepted to **ICML 2026**.
 - **Jan 2026** — BideDPO was accepted to **ICLR 2026**.
 - **May 2025** — DreamRenderer was accepted to **ICCV 2025**.
 - **July 2025** — TSGS was accepted to **ACM Multimedia 2025** as an **Oral Presentation**.
 
 ## 📚 Selected Publications
+
+### TransNormal-2: Dense Visual Semantics for Flow-based Transparent Object Geometry Estimation
+
+**Mingwei Li**, Hehe Fan, Yi Yang<br>
+**Preprint, 2026**
 
 ### [TransNormal: Dense Visual Semantics for Diffusion-based Transparent Object Normal Estimation](https://longxiang-ai.github.io/TransNormal/)
 
