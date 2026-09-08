@@ -21,10 +21,10 @@ My research centers on **generative visual intelligence**, with a particular int
 ## 📰 News
 
 - **Sept 2026** — **[TransNormal-2](https://longxiang-ai.github.io/TransNormal-2/)** project page and visual comparisons are online.
-- **May 2026** — TransNormal was accepted to **ICML 2026**.
-- **Jan 2026** — BideDPO was accepted to **ICLR 2026**.
-- **May 2025** — DreamRenderer was accepted to **ICCV 2025**.
-- **July 2025** — TSGS was accepted to **ACM Multimedia 2025** as an **Oral Presentation**.
+- **May 2026** — **[TransNormal](https://github.com/longxiang-ai/TransNormal)** was accepted to **ICML 2026**.
+- **Jan 2026** — **[BideDPO](https://github.com/limuloo/BideDPO)** was accepted to **ICLR 2026**.
+- **May 2025** — **[DreamRenderer](https://github.com/limuloo/DreamRenderer)** was accepted to **ICCV 2025**.
+- **July 2025** — **[TSGS](https://github.com/longxiang-ai/TSGS)** was accepted to **ACM Multimedia 2025** as an **Oral Presentation**.
 
 ## 📚 Selected Publications
 
